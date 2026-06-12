@@ -1,0 +1,6 @@
+{
+  "name": "Vitesse Arcade",
+  "description": "Un jeu de course de voitures rétro-arcade solo avec personnalisation des voitures, pistes variées, synthétiseur audio de moteur et records à battre !",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
