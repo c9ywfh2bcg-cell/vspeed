@@ -264,7 +264,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
 
   // Handle countdown text in real-time
   useEffect(() => {
-    if (metrics.status !== 'counting') return;
+    if (metrics.status !== 'counting' || showTutorial) return;
 
     const timer = setInterval(() => {
       const diff = Date.now() - raceClock.current.countdownStart;
@@ -289,7 +289,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [metrics.status]);
+  }, [metrics.status, showTutorial]);
 
   // Main simulation model running 60Hz
   const updateGamePhysics = (dt: number) => {
@@ -981,7 +981,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
 
   const currentSeconds = (metrics.elapsedTime / 1000).toFixed(3);
   return (
-    <div className="relative w-full h-full flex flex-col bg-zinc-950 select-none text-zinc-100 overflow-hidden" id="race-container-screen">
+    <div className="relative w-full h-[calc(100vh-84px)] min-h-[600px] flex flex-col bg-zinc-950 select-none text-zinc-100 overflow-hidden" id="race-container-screen">
       
       {/* Top Floating HUD bar */}
       <div className="absolute top-4 inset-x-4 flex items-center justify-between z-30 pointer-events-none">
@@ -1122,6 +1122,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
               onClick={() => {
                 audio.playBeep(600, 0.1);
                 setShowTutorial(false);
+                raceClock.current.countdownStart = Date.now();
               }}
               className="w-full bg-white text-zinc-950 font-black italic uppercase py-3.5 px-4 text-xs tracking-widest skew-racing hover:bg-cyan-400 transition-colors cursor-pointer inline-flex items-center justify-center gap-1.5 shadow-lg"
             >
