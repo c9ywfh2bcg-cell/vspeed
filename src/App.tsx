@@ -286,7 +286,7 @@ export default function App() {
               {/* Status footer with total records indicator */}
               <div className="text-[10px] text-zinc-500 font-mono flex items-center justify-center gap-2 tracking-widest font-black uppercase">
                 <span>CIRCULATEURS ENREGISTRÉS :</span>
-                <span className="text-cyan-450 font-black text-xs">{records.length} / 3</span>
+                <span className="text-cyan-400 font-black text-xs">{records.length} / 3</span>
               </div>
 
             </div>
@@ -303,7 +303,7 @@ export default function App() {
                 <h1 className="text-4xl font-black italic uppercase tracking-tighter leading-none text-white mt-1">
                   SÉLECTION DU TRACÉ<span className="text-red-500 font-bold">.</span>
                 </h1>
-                <p className="text-xs text-zinc-450 mt-2 font-medium">Choisissez une piste pour mettre vos compétences de pilote à l'épreuve !</p>
+                <p className="text-xs text-zinc-400 mt-2 font-medium">Choisissez une piste pour mettre vos compétences de pilote à l'épreuve !</p>
               </div>
 
               <button
@@ -331,8 +331,8 @@ export default function App() {
                     }}
                     className={`rounded-2xl bg-zinc-900/90 border-2 p-5 flex flex-col justify-between transition-all cursor-pointer relative overflow-hidden group ${
                       isSelected 
-                        ? 'border-cyan-405 bg-black shadow-[0_0_25px_rgba(6,182,212,0.25)] scale-[1.02]' 
-                        : 'border-zinc-800 hover:border-zinc-650 hover:scale-[1.01]'
+                        ? 'border-cyan-400 bg-black shadow-[0_0_25px_rgba(6,182,212,0.25)] scale-[1.02]' 
+                        : 'border-zinc-800 hover:border-zinc-700 hover:scale-[1.01]'
                     }`}
                   >
                     {/* Decorative backdrop glow for selected card */}
@@ -440,7 +440,7 @@ export default function App() {
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-red-500 to-cyan-400" />
               
               <div className="flex justify-center">
-                <div className="bg-cyan-500/10 border-2 border-cyan-400/30 p-4 rounded-full text-cyan-450 animate-pulse">
+                <div className="bg-cyan-500/10 border-2 border-cyan-400/30 p-4 rounded-full text-cyan-400 animate-pulse">
                   <Award size={36} />
                 </div>
               </div>
@@ -452,7 +452,7 @@ export default function App() {
               </div>
 
               {/* Time stats card */}
-              <div className="bg-zinc-950 border-2 border-zinc-805 p-5 rounded-2xl space-y-4 font-mono text-xs">
+              <div className="bg-zinc-950 border-2 border-zinc-800 p-5 rounded-2xl space-y-4 font-mono text-xs">
                 <div className="flex justify-between items-center pb-3 border-b border-zinc-800">
                   <span className="text-zinc-500 uppercase font-black tracking-wide">Chronomètre :</span>
                   <span className="text-cyan-400 font-black text-xl italic">{summaryData.time.toFixed(3)}s</span>
@@ -464,7 +464,7 @@ export default function App() {
                 </div>
 
                 <div className="flex justify-between items-center text-[13px]">
-                  <span className="text-zinc-405 uppercase font-black tracking-wide">Crédits Gagnés :</span>
+                  <span className="text-zinc-400 uppercase font-black tracking-wide">Crédits Gagnés :</span>
                   <span className="text-red-500 font-black text-lg flex items-center gap-1.5 italic">
                     <Coins size={14} className="text-red-500" />
                     <span>+{summaryData.creditsEarned}</span>
@@ -482,8 +482,8 @@ export default function App() {
 
               {/* Medal award display */}
               {summaryData.medal !== 'Néant' && (
-                <div className="bg-zinc-950 border-2 border-zinc-805 rounded-2xl py-3.5 px-4 flex items-center justify-between">
-                  <span className="text-xs text-zinc-450 uppercase font-bold tracking-wider">Médaille :</span>
+                <div className="bg-zinc-950 border-2 border-zinc-800 rounded-2xl py-3.5 px-4 flex items-center justify-between">
+                  <span className="text-xs text-zinc-400 uppercase font-bold tracking-wider">Médaille :</span>
                   <span className={`text-[10px] uppercase font-mono font-black tracking-widest px-3.5 py-1.5 rounded-full border flex items-center gap-1.5 ${
                     summaryData.medal === 'Or' ? 'bg-amber-500/15 text-amber-400 border-amber-500/35 shadow-[0_0_10px_rgba(245,158,11,0.2)]' :
                     summaryData.medal === 'Argent' ? 'bg-zinc-300/15 text-zinc-350 border-zinc-300/35' :

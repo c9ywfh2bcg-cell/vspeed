@@ -994,13 +994,13 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
               audio.stopEngine();
               onExit();
             }}
-            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-805 text-zinc-400 hover:text-red-500 hover:border-red-500 p-2.5 rounded-2xl transition-all cursor-pointer shadow-lg"
+            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-800 text-zinc-400 hover:text-red-500 hover:border-red-500 p-2.5 rounded-2xl transition-all cursor-pointer shadow-lg"
             title="Quitter la course"
           >
             <ArrowLeft size={16} />
           </button>
 
-          <div className="bg-zinc-950 border-2 border-zinc-805 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-5 shadow-lg">
+          <div className="bg-zinc-950 border-2 border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-5 shadow-lg">
             <div className="flex flex-col">
               <span className="text-[9px] text-zinc-500 font-mono tracking-widest uppercase font-black">Piste</span>
               <span className="text-xs font-black text-white italic uppercase tracking-tight">{track.name}</span>
@@ -1034,7 +1034,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
         {/* Right Side: Total clock, credits and sound toggle */}
         <div id="hud-metrics-right" className="flex items-center gap-3 pointer-events-auto">
           
-          <div className="bg-zinc-950 border-2 border-zinc-805 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-5 font-mono shadow-lg">
+          <div className="bg-zinc-950 border-2 border-zinc-800 backdrop-blur-md px-5 py-2.5 rounded-2xl flex items-center gap-5 font-mono shadow-lg">
             <div className="flex flex-col items-end">
               <span className="text-[9px] text-zinc-500 tracking-widest uppercase font-black">Chronomètre</span>
               <span className="text-sm font-black text-white tracking-widest italic tabular-nums">{currentSeconds}s</span>
@@ -1060,14 +1060,14 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
               }
               setSoundEnabled(!soundEnabled);
             }}
-            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-805 p-3 rounded-2xl transition-all text-zinc-400 hover:text-cyan-400 cursor-pointer shadow-lg"
+            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-800 p-3 rounded-2xl transition-all text-zinc-400 hover:text-cyan-400 cursor-pointer shadow-lg"
           >
             {soundEnabled ? <Volume2 size={15} /> : <VolumeX size={15} />}
           </button>
 
           <button
             onClick={() => setIsPaused(!isPaused)}
-            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-805 p-3 rounded-2xl transition-all text-zinc-400 hover:text-cyan-400 cursor-pointer shadow-lg"
+            className="bg-zinc-950 hover:bg-zinc-900 border-2 border-zinc-800 p-3 rounded-2xl transition-all text-zinc-400 hover:text-cyan-400 cursor-pointer shadow-lg"
           >
             {isPaused ? <Play size={15} className="text-red-500 fill-red-500" /> : <Pause size={15} />}
           </button>
@@ -1078,15 +1078,15 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
       {showTutorial && metrics.status === 'counting' && (
         <div className="absolute inset-0 bg-zinc-950/95 z-40 flex flex-col items-center justify-center p-6 text-center select-text">
           <div className="max-w-md w-full bg-zinc-900 border-2 border-zinc-800 rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
-            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-450 via-red-500 to-cyan-450" />
+            <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 via-red-500 to-cyan-400" />
             
             <h3 className="text-xl font-black italic text-white tracking-tighter mb-2 uppercase flex items-center justify-center gap-2.5">
               <Compass className="animate-spin text-cyan-400" size={20} />
-              <span>PRÊT POUR LE DÉPART<span className="text-red-550 font-bold"> ?</span></span>
+              <span>PRÊT POUR LE DÉPART<span className="text-red-500 font-bold"> ?</span></span>
             </h3>
             
             <div className="space-y-4 my-6 text-xs text-zinc-350 text-left">
-              <p className="leading-relaxed text-center italic text-zinc-450 border-b-2 border-zinc-800 pb-3 font-semibold text-[11px]">
+              <p className="leading-relaxed text-center italic text-zinc-400 border-b-2 border-zinc-800 pb-3 font-semibold text-[11px]">
                 « Pilotez votre bolide sur la trajectoire idéale, collectez des crédits et franchissez la ligne d'arrivée ! »
               </p>
 
@@ -1160,7 +1160,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
           <span className="font-mono text-sm font-black text-white italic">{Math.round(metrics.speed * 21)}</span>
         </div>
         <div className="flex flex-col">
-          <span className="text-[9px] text-zinc-550 font-mono tracking-wider uppercase font-black">Vitesse de pointe</span>
+          <span className="text-[9px] text-zinc-500 font-mono tracking-wider uppercase font-black">Vitesse de pointe</span>
           <span className="text-xs font-black text-zinc-100 tracking-wide font-sans italic">
             {metrics.speed > 5.5 ? <span className="text-red-500">TURBO ACTIVÉ</span> : "Régime stabilisé"}
           </span>
@@ -1220,7 +1220,7 @@ export default function RaceCanvas({ track, customization, onFinishRace, onExit 
             onTouchStart={(e) => { e.preventDefault(); setTouchControls(prev => ({ ...prev, gas: true })); }}
             onTouchEnd={() => setTouchControls(prev => ({ ...prev, gas: false }))}
             className={`w-16 h-16 rounded-full border-2 text-white flex items-center justify-center active:scale-95 transition-all font-black text-xs uppercase tracking-widest cursor-pointer ${
-              touchControls.gas ? 'bg-cyan-400 border-cyan-300 text-zinc-955 font-black shadow-[0_0_15px_rgba(34,211,238,0.4)]' : 'bg-zinc-950/90 border-zinc-800'
+              touchControls.gas ? 'bg-cyan-400 border-cyan-300 text-zinc-950 font-black shadow-[0_0_15px_rgba(34,211,238,0.4)]' : 'bg-zinc-950/90 border-zinc-800'
             }`}
             title="Accélérer le moteur"
           >

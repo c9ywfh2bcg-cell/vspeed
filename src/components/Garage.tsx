@@ -245,7 +245,7 @@ export default function Garage({
 
             {/* Custom Palette color picker */}
             <div className="w-full border-t border-zinc-800 pt-5 mt-2 flex flex-col items-center">
-              <div className="flex items-center gap-1.5 text-[10px] text-zinc-450 font-mono tracking-widest font-black uppercase mb-4">
+              <div className="flex items-center gap-1.5 text-[10px] text-zinc-400 font-mono tracking-widest font-black uppercase mb-4">
                 <Palette size={14} className="text-cyan-400" />
                 <span>NUANCIER CHÂSSIS / CHROME PAINT</span>
               </div>
@@ -285,7 +285,7 @@ export default function Garage({
                         ? 'bg-red-500 border-red-400 text-white shadow-[0_0_20px_rgba(239,68,68,0.3)]' 
                         : isLocked && !canBuy
                           ? 'bg-zinc-900/40 border-zinc-900/50 opacity-50 cursor-not-allowed text-zinc-500'
-                          : 'bg-zinc-900 border-zinc-800 text-white hover:border-zinc-550'
+                          : 'bg-zinc-900 border-zinc-800 text-white hover:border-zinc-500'
                     }`}
                   >
                     <div className="w-full relative z-10">
@@ -303,14 +303,14 @@ export default function Garage({
                           )
                         )}
                       </div>
-                      <p className={`text-xs leading-relaxed mb-4 line-clamp-2 ${isSelected ? 'text-red-100' : 'text-zinc-450'}`}>
+                      <p className={`text-xs leading-relaxed mb-4 line-clamp-2 ${isSelected ? 'text-red-100' : 'text-zinc-400'}`}>
                         {template.description}
                       </p>
                     </div>
 
                     <div className="flex items-center justify-between mt-2 pt-2 border-t border-zinc-850 w-full relative z-10">
                       <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider">
-                        <span className={isSelected ? 'text-red-100' : 'text-zinc-550'}>Vitesse :</span>
+                        <span className={isSelected ? 'text-red-100' : 'text-zinc-500'}>Vitesse :</span>
                         <span className={`font-black ${isSelected ? 'text-white' : 'text-zinc-300'}`}>{Math.round(template.baseMaxSpeed * 10)} km/h</span>
                       </div>
                       
@@ -357,7 +357,7 @@ export default function Garage({
                 <div className="bg-zinc-950 p-4 rounded-2xl border-2 border-zinc-850">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <Gauge size={16} className="text-cyan-450" />
+                      <Gauge size={16} className="text-cyan-400" />
                       <span className="font-extrabold text-xs text-white uppercase tracking-wider">Moteur (V-Max)</span>
                     </div>
                     <span className="font-mono text-[10px] font-black uppercase text-zinc-500">Niv. {customization.engineLevel}/{UPGRADE_MAX_LEVEL}</span>
@@ -378,7 +378,7 @@ export default function Garage({
                   </div>
 
                   <div className="flex items-center justify-between mt-2">
-                    <span className="text-[10px] text-zinc-550 font-mono tracking-wider font-bold">
+                    <span className="text-[10px] text-zinc-500 font-mono tracking-wider font-bold">
                       BONUS : <span className="font-black text-cyan-400">+{Math.round(customization.engineLevel * 7)}% V-Max</span>
                     </span>
 
@@ -388,7 +388,7 @@ export default function Garage({
                         disabled={coins < engineCost}
                         className={`px-3.5 py-2 font-mono text-[10px] font-black uppercase flex items-center justify-center gap-1.5 transition-all skew-racing ${
                           coins >= engineCost
-                            ? 'bg-cyan-405 text-zinc-950 shadow-md cursor-pointer'
+                            ? 'bg-cyan-400 text-zinc-950 shadow-md cursor-pointer'
                             : 'bg-zinc-850 text-zinc-600 cursor-not-allowed'
                         }`}
                       >
@@ -426,7 +426,7 @@ export default function Garage({
                   </div>
 
                   <div className="flex items-center justify-between mt-2">
-                    <span className="text-[10px] text-zinc-550 font-mono tracking-wider font-bold">
+                    <span className="text-[10px] text-zinc-500 font-mono tracking-wider font-bold">
                       BONUS : <span className="font-black text-red-500">+{Math.round(customization.tiresLevel * 12)}% Grip</span>
                     </span>
 
@@ -474,7 +474,7 @@ export default function Garage({
                   </div>
 
                   <div className="flex items-center justify-between mt-2">
-                    <span className="text-[10px] text-zinc-550 font-mono tracking-wider font-bold">
+                    <span className="text-[10px] text-zinc-500 font-mono tracking-wider font-bold">
                       BONUS : <span className="font-black text-amber-500">+{Math.round(customization.turboLevel * 14)}% Accél.</span>
                     </span>
 

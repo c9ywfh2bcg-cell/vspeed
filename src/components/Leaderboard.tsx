@@ -65,7 +65,7 @@ export default function Leaderboard({ records, onResetRecords, onBack }: Leaderb
                     {track.difficulty}
                   </span>
                   
-                  <Star size={16} className={userBest ? "text-cyan-400 fill-cyan-450" : "text-zinc-700"} />
+                  <Star size={16} className={userBest ? "text-cyan-400 fill-cyan-400" : "text-zinc-700"} />
                 </div>
 
                 <h3 className="font-extrabold text-base italic text-white uppercase tracking-tight mb-2 leading-tight">{track.name}</h3>
@@ -77,7 +77,7 @@ export default function Leaderboard({ records, onResetRecords, onBack }: Leaderb
                 <div className="flex justify-between items-center bg-zinc-950 p-2.5 rounded-xl border border-zinc-800">
                   <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-black">Mon Record :</span>
                   <div className="flex items-center gap-1 font-black">
-                    <Clock size={12} className="text-cyan-450" />
+                    <Clock size={12} className="text-cyan-400" />
                     <span className={userBest ? "text-cyan-400 text-[13px] italic font-black" : "text-zinc-650"}>
                       {userBest ? `${userBest.bestTime.toFixed(3)}s` : "Aucun"}
                     </span>
@@ -92,7 +92,7 @@ export default function Leaderboard({ records, onResetRecords, onBack }: Leaderb
 
                 {/* Developer targets */}
                 <div className="pt-2">
-                  <span className="text-[9px] text-zinc-550 uppercase tracking-widest font-black block mb-2">TEMPS À BATTRE :</span>
+                  <span className="text-[9px] text-zinc-500 uppercase tracking-widest font-black block mb-2">TEMPS À BATTRE :</span>
                   <div className="mt-1 space-y-1.5">
                     <div className="flex justify-between items-center text-[11px] font-semibold">
                       <span className="flex items-center gap-1 text-amber-500 font-black">🥇 Or :</span>
@@ -121,7 +121,7 @@ export default function Leaderboard({ records, onResetRecords, onBack }: Leaderb
           <Sparkles className="text-cyan-400" size={15} />
           <span>Conseils de Pro pour le Record Absolu</span>
         </h4>
-        <ul className="space-y-2.5 text-xs text-zinc-450 leading-relaxed font-medium">
+        <ul className="space-y-2.5 text-xs text-zinc-400 leading-relaxed font-medium">
           <li><strong>Optimisez le drift :</strong> Lâcher brièvement l'accélérateur permet de prendre les virages en épingle sans heurter le décor extérieur.</li>
           <li><strong>Le décor ralentit fortement :</strong> Chaque collision contre un arbre ou un panneau rocheux réduit temporairement votre vitesse à zéro ! Dérivez prudemment.</li>
           <li><strong>Améliorez votre châssis :</strong> Allez dans le <span className="text-cyan-400 font-bold">Garage</span> pour booster votre vitesse de pointe ou le turbo. Certains virages serrés exigent des pneus d'adhérence optimale de Niveau 5.</li>
@@ -131,7 +131,7 @@ export default function Leaderboard({ records, onResetRecords, onBack }: Leaderb
 
       {/* Danger Zone: reset board */}
       <div className="mt-auto border-t-2 border-zinc-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="text-xs text-zinc-550 flex items-center gap-2 font-medium">
+        <div className="text-xs text-zinc-500 flex items-center gap-2 font-medium">
           <AlertCircle size={14} className="text-red-500/50" />
           <span>Effacer le stockage local supprime tous vos records personnels de course.</span>
         </div>
